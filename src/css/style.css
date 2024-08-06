@@ -7,12 +7,13 @@ body {
 
 .container {
     width: 600px;
-    height: 400px;
+    height: 300vh;
     background-color: skyblue;
     border-radius: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .block {
@@ -20,9 +21,15 @@ body {
     height: 100px;
     border-radius: 5px;
     background-color: seagreen;
-    animation: rotating 500ms linear 0s infinite alternate both;
-    animation-play-state: paused;
+    
+    
+animation-fill-mode: backwards;
 }
+
+.block:nth-child(even) {
+    align-self: flex-end;
+}
+
 
 @keyframes rotating {
     0%{
@@ -92,4 +99,8 @@ body {
     100%{
         transform: rotate(90deg);
     }
+}
+
+.title {
+    font-size: 2em;
 }
